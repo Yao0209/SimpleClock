@@ -42,6 +42,7 @@
             this.btnCancelAlert = new System.Windows.Forms.Button();
             this.timerClcok = new System.Windows.Forms.Timer(this.components);
             this.timerAlert = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.btnCancelAlert);
             this.tabPage1.Controls.Add(this.btnSetAlert);
             this.tabPage1.Controls.Add(this.cmbMin);
@@ -78,7 +80,7 @@
             // cmbMin
             // 
             this.cmbMin.FormattingEnabled = true;
-            this.cmbMin.Location = new System.Drawing.Point(493, 646);
+            this.cmbMin.Location = new System.Drawing.Point(473, 646);
             this.cmbMin.Name = "cmbMin";
             this.cmbMin.Size = new System.Drawing.Size(209, 45);
             this.cmbMin.TabIndex = 4;
@@ -174,6 +176,15 @@
             // 
             this.timerAlert.Tick += new System.EventHandler(this.timerAlert_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(430, 646);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 37);
+            this.label1.TabIndex = 7;
+            this.label1.Text = ":";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
@@ -204,6 +215,7 @@
         private System.Windows.Forms.Button btnSetAlert;
         private System.Windows.Forms.Timer timerClcok;
         private System.Windows.Forms.Timer timerAlert;
+        private System.Windows.Forms.Label label1;
     }
 }
 
