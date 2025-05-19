@@ -99,5 +99,21 @@ namespace SimpleClock
                 waveOut = null;
             }
         }
+
+        private void btnSetAlert_Click(object sender, EventArgs e)
+        {
+            timerAlert.Start(); // 啟動鬧鐘計時器
+            btnSetAlert.Enabled = false;
+            btnCancelAlert.Enabled = true;
+            strSelectTime = cmbHour.SelectedItem.ToString() + ":" + cmbMin.SelectedItem.ToString(); // 擷取小時和分鐘的下拉選單文字，用來設定鬧鐘時間
+        }
+
+        private void btnCancelAlert_Click(object sender, EventArgs e)
+        {
+            stopWaveOut();     // 停止之前的播放
+            timerAlert.Stop(); // 停止鬧鐘計時器
+            btnSetAlert.Enabled = true;
+            btnCancelAlert.Enabled = false;
+        }
     }
 }
