@@ -17,6 +17,8 @@ namespace SimpleClock
             InitializeComponent(); 
             
             comboboxInitialzation();  // 下拉選單初始化
+            
+            timerClcok.Start();       // 啟動時鐘
         }
 
         List<string> hours = new List<string>();            // 小時清單
@@ -35,9 +37,13 @@ namespace SimpleClock
                 cmbMin.Items.Add(string.Format("{0:00}", i));
             cmbMin.SelectedIndex = 0;
         }
+        
+        // 時鐘timer1_Tick事件：每0.1秒執行一次
         private void timerClcok_Tick(object sender, EventArgs e)
         {
-
+            txtTime.Text = DateTime.Now.ToString("HH:mm:ss");    // 顯示時間
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");  // 顯示日期
+            txtWeekDay.Text = DateTime.Now.ToString("dddd");     // 顯示星期幾
         }
 
         private void timerAlert_Tick(object sender, EventArgs e)
