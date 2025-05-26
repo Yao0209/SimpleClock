@@ -200,7 +200,7 @@
             this.btnStop.BackColor = System.Drawing.Color.Red;
             this.btnStop.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnStop.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnStop.Location = new System.Drawing.Point(534, 576);
+            this.btnStop.Location = new System.Drawing.Point(852, 592);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(632, 89);
             this.btnStop.TabIndex = 7;
@@ -211,7 +211,7 @@
             // btnLog
             // 
             this.btnLog.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLog.Location = new System.Drawing.Point(863, 444);
+            this.btnLog.Location = new System.Drawing.Point(1201, 444);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(287, 89);
             this.btnLog.TabIndex = 6;
@@ -222,7 +222,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnReset.Location = new System.Drawing.Point(534, 444);
+            this.btnReset.Location = new System.Drawing.Point(852, 444);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(283, 89);
             this.btnReset.TabIndex = 5;
@@ -234,7 +234,7 @@
             // 
             this.btnPause.BackColor = System.Drawing.Color.Yellow;
             this.btnPause.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnPause.Location = new System.Drawing.Point(863, 327);
+            this.btnPause.Location = new System.Drawing.Point(1201, 327);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(287, 89);
             this.btnPause.TabIndex = 4;
@@ -245,7 +245,7 @@
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnStart.Location = new System.Drawing.Point(534, 327);
+            this.btnStart.Location = new System.Drawing.Point(852, 327);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(283, 89);
             this.btnStart.TabIndex = 3;
@@ -259,7 +259,7 @@
             this.listStopWatchLog.ItemHeight = 37;
             this.listStopWatchLog.Location = new System.Drawing.Point(6, 327);
             this.listStopWatchLog.Name = "listStopWatchLog";
-            this.listStopWatchLog.Size = new System.Drawing.Size(504, 559);
+            this.listStopWatchLog.Size = new System.Drawing.Size(748, 559);
             this.listStopWatchLog.TabIndex = 2;
             // 
             // txtStopWatch

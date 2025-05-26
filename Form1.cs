@@ -34,6 +34,9 @@ namespace SimpleClock
         List<string> StopWatchLog = new List<string>();         // 碼表紀錄清單 
         Stopwatch sw = new Stopwatch();                         // 宣告一個碼表物件
 
+        bool isCountDownReset = true;                           // 用來紀錄是不是重新設定
+        TimeSpan ts;                                            // 宣告一個時間間隔變數
+
         #region -時鐘頁籤-
         // 下拉選單初始化
         private void comboboxInitialzation()
