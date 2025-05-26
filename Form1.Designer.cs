@@ -40,16 +40,16 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnLog = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.listStopWatchLog = new System.Windows.Forms.ListBox();
+            this.txtStopWatch = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.timerClcok = new System.Windows.Forms.Timer(this.components);
             this.timerAlert = new System.Windows.Forms.Timer(this.components);
-            this.txtStopWatch = new System.Windows.Forms.TextBox();
-            this.listStopWatchLog = new System.Windows.Forms.ListBox();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnPause = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnLog = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
             this.timerStopWatch = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -186,6 +186,85 @@
             this.tabPage2.Text = "碼表";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnStop
+            // 
+            this.btnStop.BackColor = System.Drawing.Color.Red;
+            this.btnStop.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStop.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnStop.Location = new System.Drawing.Point(534, 576);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(632, 89);
+            this.btnStop.TabIndex = 7;
+            this.btnStop.Text = "停止並歸零";
+            this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnLog
+            // 
+            this.btnLog.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLog.Location = new System.Drawing.Point(863, 444);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.Size = new System.Drawing.Size(287, 89);
+            this.btnLog.TabIndex = 6;
+            this.btnLog.Text = "記錄";
+            this.btnLog.UseVisualStyleBackColor = true;
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReset.Location = new System.Drawing.Point(534, 444);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(283, 89);
+            this.btnReset.TabIndex = 5;
+            this.btnReset.Text = "歸零";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnPause
+            // 
+            this.btnPause.BackColor = System.Drawing.Color.Yellow;
+            this.btnPause.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPause.Location = new System.Drawing.Point(863, 327);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(287, 89);
+            this.btnPause.TabIndex = 4;
+            this.btnPause.Text = "暫停";
+            this.btnPause.UseVisualStyleBackColor = false;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // btnStart
+            // 
+            this.btnStart.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStart.Location = new System.Drawing.Point(534, 327);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(283, 89);
+            this.btnStart.TabIndex = 3;
+            this.btnStart.Text = "開始";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // listStopWatchLog
+            // 
+            this.listStopWatchLog.FormattingEnabled = true;
+            this.listStopWatchLog.ItemHeight = 37;
+            this.listStopWatchLog.Location = new System.Drawing.Point(6, 327);
+            this.listStopWatchLog.Name = "listStopWatchLog";
+            this.listStopWatchLog.Size = new System.Drawing.Size(504, 559);
+            this.listStopWatchLog.TabIndex = 2;
+            // 
+            // txtStopWatch
+            // 
+            this.txtStopWatch.Enabled = false;
+            this.txtStopWatch.Font = new System.Drawing.Font("標楷體", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtStopWatch.Location = new System.Drawing.Point(6, 6);
+            this.txtStopWatch.Multiline = true;
+            this.txtStopWatch.Name = "txtStopWatch";
+            this.txtStopWatch.Size = new System.Drawing.Size(1626, 296);
+            this.txtStopWatch.TabIndex = 1;
+            this.txtStopWatch.Text = "\r\n00：00：00\r\n\r\n";
+            this.txtStopWatch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(8, 52);
@@ -202,80 +281,6 @@
             // timerAlert
             // 
             this.timerAlert.Tick += new System.EventHandler(this.timerAlert_Tick);
-            // 
-            // txtStopWatch
-            // 
-            this.txtStopWatch.Enabled = false;
-            this.txtStopWatch.Font = new System.Drawing.Font("標楷體", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtStopWatch.Location = new System.Drawing.Point(6, 6);
-            this.txtStopWatch.Multiline = true;
-            this.txtStopWatch.Name = "txtStopWatch";
-            this.txtStopWatch.Size = new System.Drawing.Size(1626, 296);
-            this.txtStopWatch.TabIndex = 1;
-            this.txtStopWatch.Text = "\r\n10：09：08\r\n\r\n";
-            this.txtStopWatch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // listStopWatchLog
-            // 
-            this.listStopWatchLog.FormattingEnabled = true;
-            this.listStopWatchLog.ItemHeight = 37;
-            this.listStopWatchLog.Location = new System.Drawing.Point(6, 327);
-            this.listStopWatchLog.Name = "listStopWatchLog";
-            this.listStopWatchLog.Size = new System.Drawing.Size(504, 559);
-            this.listStopWatchLog.TabIndex = 2;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnStart.Location = new System.Drawing.Point(534, 327);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(283, 89);
-            this.btnStart.TabIndex = 3;
-            this.btnStart.Text = "開始";
-            this.btnStart.UseVisualStyleBackColor = true;
-            // 
-            // btnPause
-            // 
-            this.btnPause.BackColor = System.Drawing.Color.Yellow;
-            this.btnPause.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnPause.Location = new System.Drawing.Point(863, 327);
-            this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(287, 89);
-            this.btnPause.TabIndex = 4;
-            this.btnPause.Text = "暫停";
-            this.btnPause.UseVisualStyleBackColor = false;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnReset.Location = new System.Drawing.Point(534, 444);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(283, 89);
-            this.btnReset.TabIndex = 5;
-            this.btnReset.Text = "歸零";
-            this.btnReset.UseVisualStyleBackColor = true;
-            // 
-            // btnLog
-            // 
-            this.btnLog.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLog.Location = new System.Drawing.Point(863, 444);
-            this.btnLog.Name = "btnLog";
-            this.btnLog.Size = new System.Drawing.Size(287, 89);
-            this.btnLog.TabIndex = 6;
-            this.btnLog.Text = "記錄";
-            this.btnLog.UseVisualStyleBackColor = true;
-            // 
-            // btnStop
-            // 
-            this.btnStop.BackColor = System.Drawing.Color.Red;
-            this.btnStop.Font = new System.Drawing.Font("標楷體", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnStop.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnStop.Location = new System.Drawing.Point(534, 576);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(632, 89);
-            this.btnStop.TabIndex = 7;
-            this.btnStop.Text = "停止並歸零";
-            this.btnStop.UseVisualStyleBackColor = false;
             // 
             // timerStopWatch
             // 

@@ -125,5 +125,32 @@ namespace SimpleClock
         {
             txtStopWatch.Text = sw.Elapsed.ToString("hh':'mm':'ss':'fff");    // 顯示碼表時間
         }
+
+        // 啟動碼表
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            sw.Start();             // 啟動碼表
+            timerStopWatch.Start(); // 開始讓碼表文字顯示
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            sw.Reset();                           // 停止並歸零碼表
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
