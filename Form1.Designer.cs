@@ -50,6 +50,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
+            this.timerStopWatch = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -276,6 +277,11 @@
             this.btnStop.Text = "停止並歸零";
             this.btnStop.UseVisualStyleBackColor = false;
             // 
+            // timerStopWatch
+            // 
+            this.timerStopWatch.Interval = 1;
+            this.timerStopWatch.Tick += new System.EventHandler(this.timerStopWatch_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
@@ -316,6 +322,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Timer timerStopWatch;
     }
 }
 

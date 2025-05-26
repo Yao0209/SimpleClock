@@ -115,5 +115,10 @@ namespace SimpleClock
             btnSetAlert.Enabled = true;
             btnCancelAlert.Enabled = false;
         }
+
+        private void timerStopWatch_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
