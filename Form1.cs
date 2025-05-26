@@ -189,8 +189,12 @@ namespace SimpleClock
                 i--;
             }
         }
+
         #endregion
 
+        private void timerCountDown_Tick(object sender, EventArgs e)
+        {
 
+        }
     }
 }

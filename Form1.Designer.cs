@@ -58,6 +58,7 @@
             this.cmbCountSecond = new System.Windows.Forms.ComboBox();
             this.btnCountPause = new System.Windows.Forms.Button();
             this.btnCountStop = new System.Windows.Forms.Button();
+            this.timerCountDown = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -376,6 +377,11 @@
             this.btnCountStop.Text = "停止";
             this.btnCountStop.UseVisualStyleBackColor = false;
             // 
+            // timerCountDown
+            // 
+            this.timerCountDown.Interval = 1;
+            this.timerCountDown.Tick += new System.EventHandler(this.timerCountDown_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
@@ -426,6 +432,7 @@
         private System.Windows.Forms.Button btnCountStart;
         private System.Windows.Forms.Button btnCountStop;
         private System.Windows.Forms.Button btnCountPause;
+        private System.Windows.Forms.Timer timerCountDown;
     }
 }
 
