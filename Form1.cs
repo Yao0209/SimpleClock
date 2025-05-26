@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave;           // 音效檔播放器函式庫
 using System.IO;             // 檔案讀取的IO函式庫
-using System.Diagnostics; // 引用「系統診斷」的函式庫
+using System.Diagnostics;    // 引用「系統診斷」的函式庫
 
 namespace SimpleClock
 {
@@ -34,6 +34,7 @@ namespace SimpleClock
         List<string> StopWatchLog = new List<string>();         // 碼表紀錄清單 
         Stopwatch sw = new Stopwatch();                         // 宣告一個碼表物件
 
+        #region -時鐘頁籤-
         // 下拉選單初始化
         private void comboboxInitialzation()
         {
@@ -119,7 +120,9 @@ namespace SimpleClock
             btnSetAlert.Enabled = true;
             btnCancelAlert.Enabled = false;
         }
+        #endregion
 
+        #region -碼表頁籤-
         // timerStopWatch_tick：每毫秒執行一次，所以更新的速度會比較快
         private void timerStopWatch_Tick(object sender, EventArgs e)
         {
@@ -186,5 +189,8 @@ namespace SimpleClock
                 i--;
             }
         }
+        #endregion
+
+
     }
 }
