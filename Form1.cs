@@ -166,9 +166,10 @@ namespace SimpleClock
             timerStopWatch.Stop();      // 停止讓碼表文字顯示  
         }
 
+        // 碼表時間紀錄
         private void btnLog_Click(object sender, EventArgs e)
         {
-
+            logRecord();
         }
 
         // 碼表時間紀錄
