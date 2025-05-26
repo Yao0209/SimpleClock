@@ -133,9 +133,14 @@ namespace SimpleClock
             timerStopWatch.Start(); // 開始讓碼表文字顯示
         }
 
+        // 停止並歸零碼表
         private void btnStop_Click(object sender, EventArgs e)
         {
             sw.Reset();                           // 停止並歸零碼表
+            timerStopWatch.Stop();                // 停止讓碼表文字顯示     
+            txtStopWatch.Text = "00:00:00:000";   // 讓碼表文字「歸零」
+            listStopWatchLog.Items.Clear();       // 清空 ListBox 中的元素
+            StopWatchLog.Clear();
         }
 
         // 歸零按鍵會判斷你是否先按下暫停？來決定是否記錄碼表時間
