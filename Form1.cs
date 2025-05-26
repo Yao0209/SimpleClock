@@ -159,9 +159,11 @@ namespace SimpleClock
             }
         }
 
+        // 暫停碼表
         private void btnPause_Click(object sender, EventArgs e)
         {
-
+            sw.Stop();                  // 停止碼表，但不歸零
+            timerStopWatch.Stop();      // 停止讓碼表文字顯示  
         }
 
         private void btnLog_Click(object sender, EventArgs e)
