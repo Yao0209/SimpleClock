@@ -212,6 +212,7 @@ namespace SimpleClock
 
         #endregion
 
+        #region -倒數計時器頁籤-
         // 倒數計時器timerCountDown_Tick事件：每一秒執行一次
         private void timerCountDown_Tick(object sender, EventArgs e)
         {
@@ -300,6 +301,10 @@ namespace SimpleClock
             timerCountDown.Start();
         }
 
+        #endregion
+
+        #region -- 倒數計時器介面 --
+
         // 暫停倒數計時器按鍵
         private void btnCountPause_Click(object sender, EventArgs e)
         {
@@ -317,5 +322,6 @@ namespace SimpleClock
             cmbCountMin.SelectedIndex = 0;
             cmbCountSecond.SelectedIndex = 0;
         }
+        #endregion
     }
 }
