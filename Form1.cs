@@ -76,7 +76,12 @@ namespace SimpleClock
         {
             // 判斷現在時間是不是已經是鬧鐘設定時間？如果時間到了，就要播放鬧鐘聲音
             if (strSelectTime == DateTime.Now.ToString("HH:mm"))
+                playBeep(timerAlert);
+            /*
+            // 判斷現在時間是不是已經是鬧鐘設定時間？如果時間到了，就要播放鬧鐘聲音
+            if (strSelectTime == DateTime.Now.ToString("HH:mm"))
             {
+
                 try
                 {
                     stopWaveOut();
@@ -103,6 +108,7 @@ namespace SimpleClock
                     timerAlert.Stop(); // 停止鬧鐘計時器
                 }
             }
+            */
         }
 
         // 停止之前的播放
@@ -206,9 +212,15 @@ namespace SimpleClock
 
         #endregion
 
-        // timerCountDown_tick：每一秒執行一次
+        // 倒數計時器timerCountDown_Tick事件：每一秒執行一次
         private void timerCountDown_Tick(object sender, EventArgs e)
         {
+            txtCountDown.Text = ts.ToString("hh':'mm':'ss");    // 顯示時間
+            ts = ts.Subtract(TimeSpan.FromSeconds(1));          // 每一秒鐘將顯示時間減掉一秒
+
+            if (txtCountDown.Text == "00:00:00")
+                playBeep(timerCountDown);
+            /*
             txtCountDown.Text = ts.ToString("hh':'mm':'ss");    // 顯示時間
             ts = ts.Subtract(TimeSpan.FromSeconds(1));          // 每一秒鐘將顯示時間減掉一秒
 
@@ -240,8 +252,39 @@ namespace SimpleClock
                     timerCountDown.Stop();         // 停止鬧鐘計時器
                 }
             }
+            */
         }
-        
+
+        // 播放鬧鐘聲音檔函式
+        private void playBeep(System.Windows.Forms.Timer timer)
+        {
+            try
+            {
+                stopWaveOut();
+
+                // 指定聲音檔的相對路徑，可以使用MP3
+                string audioFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "alert.wav");
+
+                // 使用 AudioFileReader 來讀取聲音檔
+                audioFileReader = new AudioFileReader(audioFilePath);
+
+                // 初始化 WaveOutEvent
+                waveOut = new WaveOutEvent();
+                waveOut.Init(audioFileReader);
+
+                // 播放聲音檔
+                waveOut.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("無法播放聲音檔，錯誤資訊: " + ex.Message);
+            }
+            finally
+            {
+                timer.Stop(); // 停止鬧鐘計時器
+            }
+        }
+
         // timerCountDown_tick：每一秒執行一次
         private void btnCountStart_Click(object sender, EventArgs e)
         {
