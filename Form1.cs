@@ -241,5 +241,38 @@ namespace SimpleClock
                 }
             }
         }
+        
+        // timerCountDown_tick：每一秒執行一次
+        private void btnCountStart_Click(object sender, EventArgs e)
+        {
+            // 進行判斷，判斷是不是有按過停止計時器按鍵
+            if (isCountDownReset == true)
+            {
+                int Hour = int.Parse(cmbCountHour.SelectedItem.ToString());
+                int Min = int.Parse(cmbCountMin.SelectedItem.ToString());
+                int Sec = int.Parse(cmbCountSecond.SelectedItem.ToString());
+                ts = new TimeSpan(Hour, Min, Sec); // 設定倒數時間
+            }
+            isCountDownReset = false;
+            timerCountDown.Start();
+        }
+
+        // 暫停倒數計時器按鍵
+        private void btnCountPause_Click(object sender, EventArgs e)
+        {
+            timerCountDown.Stop();
+        }
+
+        // 停止計時器按鍵
+        private void btnCountStop_Click(object sender, EventArgs e)
+        {
+            stopWaveOut(); // 關閉鬧鐘聲音
+            isCountDownReset = true;
+            timerCountDown.Stop();
+            txtCountDown.Text = "00:00:00";
+            cmbCountHour.SelectedIndex = 0;
+            cmbCountMin.SelectedIndex = 0;
+            cmbCountSecond.SelectedIndex = 0;
+        }
     }
 }
